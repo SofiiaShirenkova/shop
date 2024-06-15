@@ -3,9 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const button_cart = document.getElementsByClassName("to_cart");
 
     // Добавляем обработчик события клика
-    button_cart.addEventListener("click", function() {
+    button_cart[0].addEventListener("click", function() {
     // Изменяем текст кнопки
-    button_cart.innerText = "Ты нажал на меня!";
+    button_cart[0].innerText = "Ты нажал на меня!";
     });
+
+    // document.getElementById('to_cart').innerText = 'nnnn';
 
 });
