@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     
     // КНОПКА КУПИТЬ -- ВЫЛЕЗАЕТ ФОРМА ДЛЯ ЗАПОЛНЕНИЯ
-    document.addEventListener("DOMContentLoaded", function() {
         const buy_modal = document.getElementsByClassName("buy_modal");
         const openModalBtn = document.getElementsByClassName("buy");
         const closeModalBtn = document.querySelector(".close");
@@ -26,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     
         // Закрыть модальное окно при клике на крестик
-        closeModalBtn[0].addEventListener("click", function() {
+        closeModalBtn.addEventListener("click", function() {
             buy_modal[0].style.display = "none";
         });
     
@@ -48,8 +47,6 @@ document.addEventListener("DOMContentLoaded", function() {
         form.reset(); // Сбрасываем содержимое формы
         });
         
-
-});
 
 });
 
