@@ -2,37 +2,44 @@ document.addEventListener("DOMContentLoaded", function() {
     // Получаем доступ к кнопке
     const button_cart = document.getElementsByClassName("to_cart");
 
-    // Добавляем обработчик события клика
-    button_cart[0].addEventListener("click", function() {
-    // Изменяем текст кнопки
-    button_cart[0].innerText = "В корзине!";
+    for(let i = 0; i < button_cart.length; i++){
+        // Добавляем обработчик события клика
+        button_cart[i].addEventListener("click", function() {
+        // Изменяем текст кнопки
+        button_cart[i].innerText = "В корзине!";
     });
+    }
 
-
-
+    paymentString = "Итого:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
+    prices = {0 : "5999₽", 1 : "1999₽"};
 
 
 
     
     // КНОПКА КУПИТЬ -- ВЫЛЕЗАЕТ ФОРМА ДЛЯ ЗАПОЛНЕНИЯ
-        const buy_modal = document.getElementsByClassName("buy_modal");
+        const buy_modal = document.getElementById("buy_modal");
         const openModalBtn = document.getElementsByClassName("buy");
         const closeModalBtn = document.querySelector(".close");
-    
-        // Открыть модальное окно при клике на кнопку
-        openModalBtn[0].addEventListener("click", function() {
-            buy_modal[0].style.display = "block";
-        });
+        const paymentText = document.getElementById("sum");
+
+
+        for(let i = 0; i < openModalBtn.length; i++){
+            // Открыть модальное окно при клике на кнопку
+            openModalBtn[i].addEventListener("click", function() {
+                buy_modal.style.display = "block";
+                paymentText.innerHTML = paymentString + prices[i];
+            });
+        }
     
         // Закрыть модальное окно при клике на крестик
         closeModalBtn.addEventListener("click", function() {
-            buy_modal[0].style.display = "none";
+            buy_modal.style.display = "none";
         });
     
         // Закрыть модальное окно при клике вне его области
         window.addEventListener("click", function(event) {
-        if (event.target == buy_modal[0]) {
-            buy_modal[0].style.display = "none";
+        if (event.target == buy_modal) {
+            buy_modal.style.display = "none";
         }
         });
     
@@ -43,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
         // Здесь можно добавить код для отправки данных формы на сервер
         // alert("Форма отправлена!");
-        buy_modal[0].style.display = "none"; // Закрываем модальное окно после отправки
+        buy_modal.style.display = "none"; // Закрываем модальное окно после отправки
         form.reset(); // Сбрасываем содержимое формы
         });
         
