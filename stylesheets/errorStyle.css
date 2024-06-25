@@ -1,0 +1,3 @@
+@import "reset.css";/* сбрoc настроек браузера */
+@import "errorContent.css"; /* контент / содержимое  */
+@import "errorAdaptive.css";/* адаптивность */
